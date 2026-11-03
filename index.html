@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#4c5ee9">
+  <meta name="description" content="NestyFi — giao diện minh họa quản lý tài chính cá nhân và gia đình.">
+  <title>NestyFi · Tài chính gia đình</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%234c5ee9'/%3E%3Cpath d='m9 19 11-9 11 9M13 17v13h14V17M18 30v-8h5v8' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="preview.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Đến nội dung chính</a>
+  <button class="sidebar-scrim" id="sidebar-scrim" aria-label="Đóng điều hướng" hidden></button>
+  <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính">
+    <a class="brand" href="#dashboard" aria-label="NestyFi, về bảng điều khiển">
+      <span class="brand-mark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="m6 15 10-8 10 8M9 13v12h14V13M14 25v-8h5v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="brand-name">NestyFi<span class="brand-dot">.</span></span>
+    </a>
+    <nav class="sidebar-nav" id="sidebar-nav"></nav>
+    <div class="sidebar-footer">
+      <div class="family-presence"><div class="avatar-stack"><span class="avatar avatar-an">AN</span><span class="avatar avatar-linh">LI</span><span class="avatar avatar-bao">B</span></div><div><strong>Cùng nhau vun vén</strong><span>3 thành viên trong gia đình</span></div></div>
+      <div class="sidebar-footnote"><span><i class="status-dot"></i>Dữ liệu minh họa</span><button class="text-button" data-action="reset">Đặt lại</button></div>
+    </div>
+  </aside>
+
+  <div class="workspace">
+    <header class="topbar">
+      <div class="content-rail topbar-inner">
+        <button class="icon-button sidebar-toggle" id="sidebar-toggle" aria-label="Mở điều hướng" aria-controls="sidebar" aria-expanded="false"><span data-icon="menu"></span></button>
+        <a href="#dashboard" class="mobile-brand" aria-label="NestyFi"><span class="brand-mark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="m6 15 10-8 10 8M9 13v12h14V13M14 25v-8h5v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <button class="global-search" id="global-search" aria-label="Tìm kiếm nhanh" aria-keyshortcuts="Control+k"><span data-icon="search"></span><span>Tìm kiếm nhanh...</span><kbd>Ctrl K</kbd></button>
+        <div class="topbar-actions">
+          <label class="household-control"><span data-icon="house"></span><span class="sr-only">Gia đình hiện tại</span><select id="household-select"><option value="family">Gia đình mình</option><option value="parents">Nhà của bố mẹ</option></select></label>
+          <div class="topbar-divider"></div>
+          <div class="popup-anchor"><button class="icon-button notification-button" id="notification-toggle" aria-label="Thông báo, 3 thông báo mới" aria-expanded="false" aria-controls="notification-panel"><span data-icon="bell"></span><span class="notification-dot"></span></button><div class="popover notification-panel" id="notification-panel" hidden></div></div>
+          <div class="popup-anchor"><button class="profile-control" id="profile-toggle" aria-label="Mở hồ sơ Minh An" aria-expanded="false" aria-controls="profile-menu"><span class="avatar avatar-an avatar-profile">AN</span><span class="profile-copy"><strong>Minh An</strong><span>Thành viên gia đình</span></span><span data-icon="chevronDown"></span></button><div class="popover profile-menu" id="profile-menu" hidden><span class="popover-caption">Không gian của bạn</span><button data-action="profile"><span data-icon="user"></span>Hồ sơ của tôi</button><a href="#preferences"><span data-icon="settings"></span>Tùy chọn</a><div class="popover-rule"></div><button data-action="reset"><span data-icon="refresh"></span>Đặt lại bản minh họa</button></div></div>
+        </div>
+      </div>
+    </header>
+    <main class="content-rail main-content" id="main-content" tabindex="-1">
+      <div class="page-toolbar"><div class="page-heading"><h1 id="page-title">Bảng điều khiển</h1><p id="page-description" hidden></p></div><div class="page-actions"><label class="month-control"><span data-icon="calendar"></span><span class="sr-only">Tháng báo cáo</span><select id="month-select"><option value="2026-10">Tháng 10, 2026</option><option value="2026-09">Tháng 9, 2026</option><option value="2026-08">Tháng 8, 2026</option><option value="2026-07">Tháng 7, 2026</option><option value="2026-06">Tháng 6, 2026</option><option value="2026-05">Tháng 5, 2026</option></select></label><button class="button button-primary page-primary" id="page-primary"><span data-icon="plus"></span><span>Thêm giao dịch</span></button></div></div>
+      <div id="view"><noscript><div class="empty-state">Bật JavaScript để xem giao diện minh họa NestyFi.</div></noscript></div>
+      <footer class="workspace-footer"><span><i class="status-dot"></i>Dữ liệu minh họa · NestyFi</span><span>Tháng 10, 2026<span class="footer-desktop"> · Cùng vun vén tài chính gia đình</span></span></footer>
+    </main>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Điều hướng trên điện thoại"><a href="#dashboard" data-bottom-route="dashboard"><span data-icon="house"></span><span>Tổng quan</span></a><a href="#transactions" data-bottom-route="transactions"><span data-icon="arrows"></span><span>Giao dịch</span></a><button class="bottom-add" data-action="add-transaction" aria-label="Thêm giao dịch"><span class="bottom-add-icon" data-icon="plus"></span><span>Thêm</span></button><a href="#budgets" data-bottom-route="budgets"><span data-icon="wallet"></span><span>Ngân sách</span></a><button id="mobile-more" aria-label="Mở các trang khác" aria-expanded="false" aria-controls="sidebar"><span data-icon="more"></span><span>Khác</span></button></nav>
+
+  <dialog class="modal" id="modal"><div class="modal-header"><div><h2 id="modal-title">Thêm giao dịch</h2><p id="modal-description">Gia đình mình · Dữ liệu minh họa</p></div><button class="icon-button" id="modal-close" aria-label="Đóng"><span data-icon="close"></span></button></div><div id="modal-body"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <div class="chart-tooltip" id="chart-tooltip" role="tooltip" hidden></div>
+</body>
+</html>
